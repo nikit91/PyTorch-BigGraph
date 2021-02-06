@@ -11,11 +11,11 @@ def get_torchbiggraph_config():
 
     config = dict(  # noqa
         # I/O data
-        entity_path="data/dbpedia-2015-04",
+        entity_path="data/dbpedia-2015-04/bg_edit",
         edge_paths=[
-            "data/dbpedia-2015-04/train_partitioned",
-            "data/dbpedia-2015-04/valid_partitioned",
-            "data/dbpedia-2015-04/test_partitioned",
+            "data/dbpedia-2015-04/bg_edit/train_partitioned",
+            "data/dbpedia-2015-04/bg_edit/valid_partitioned",
+            "data/dbpedia-2015-04/bg_edit/test_partitioned",
         ],
         checkpoint_path="model/dbp1504",
         # Graph structure
