@@ -25,7 +25,8 @@ def get_torchbiggraph_config():
                 "name": "all_edges",
                 "lhs": "all",
                 "rhs": "all",
-                "operator": "complex_diagonal",
+                #"operator": "complex_diagonal",
+                'operator': 'translation',
             }
         ],
         dynamic_relations=True,
@@ -34,13 +35,23 @@ def get_torchbiggraph_config():
         global_emb=False,
         comparator="dot",
         # Training
-        num_epochs=5,
-        num_uniform_negs=100,
-        loss_fn="softmax",
+        #num_epochs=5,
+        #num_uniform_negs=100,
+        #loss_fn="softmax",
+        #lr=0.1,
+        num_epochs=4,
+        num_edge_chunks=10,
+        batch_size=10000,
+        num_batch_negs=500,
+        num_uniform_negs=500,
+        loss_fn='softmax',
         lr=0.1,
+        relation_lr=0.01,
         #regularization_coef=1e-3,
         # Evaluation during training
         eval_fraction=0,  # to reproduce results, we need to use all training data
+        # Misc
+        verbose=1,
     )
 
     return config
