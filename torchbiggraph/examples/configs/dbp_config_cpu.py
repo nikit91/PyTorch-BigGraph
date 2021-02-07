@@ -35,7 +35,7 @@ def get_torchbiggraph_config():
         comparator="dot",
         # Training
         num_epochs=5,
-        num_uniform_negs=100,
+        num_uniform_negs=1000,
         loss_fn="softmax",
         lr=0.1,
         regularization_coef=1e-3,
